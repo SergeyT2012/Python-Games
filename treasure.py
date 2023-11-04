@@ -2,35 +2,35 @@ import time
 import random
 
 def displayIntro():
-    print('''Вы находитесь в землях, заселенных драконами. Перед собой вы видите две пещеры. В одной из них — дружелюбный дракон,который готов поделиться с вами своими сокровищами. Во второй —жадный и голодный дракон, который мигом вас съест.''')
+    print('''You are in lands inhabited by dragons. In front of you you see two caves. In one of them there is a friendly dragon who is ready to share his treasures with you. In the second, there is a greedy and hungry dragon that will instantly eat you.''')
     print()
 
 def chooseCave():
     cave = ''
     while cave != '1' and cave != '2':
-        print('В какую пещеру вы войдете? (нажмите клавишу 1 или 2)')
+        print('Which cave will you enter? (press key 1 or 2)')
         cave = input()
 
     return cave
 
 def checkCave(chosenCave):
-    print('Вы приближаетесь к пещере...')
+    print('You walk into a cave...')
     time.sleep(2)
-    print('Большой дракон выпрыгивает перед вами! Он раскрывает свою пасть и...')
+    print('A big dragon jumps infront of you! He opens his big mouth and...')
     time.sleep(2)
 
     friendlyCave = random.randint(1, 2)
     if chosenCave == str(friendlyCave):
-        print('...делится с вами своими сокровищами!')
+        print('...shares his treasure with you!')
     else:
-        print('...моментально вас съедает!')
+        print('...eats you!')
 
-playAgain = 'да'
+playAgain = 'yes'
 
-while playAgain == 'да' or playAgain == 'д':
+while playAgain.lower().startswith('y'):
     displayIntro()
     caveNumber = chooseCave()
     checkCave(caveNumber)
 
-    print('Попытаете удачу еще раз? (да или нет)')
+    print('Try again?(y/n)')
     playAgain = input()
