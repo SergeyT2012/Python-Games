@@ -4,7 +4,7 @@ rps = 'rock paper scissors'.split()
 
 
 def displayIntro():
-    print('Hello fellow human. I am the computer, and I challange you on a game of ROCK PAPER SCISSORS! Choose Game Mode First.')
+    print('Hello fellow human. I am the computer, and I challange you on a game of ROCK PAPER SCISSORS! Now select your game mode')
 
 def computerGuess():
     cguess = random.randint(0, len(rps) - 1)
